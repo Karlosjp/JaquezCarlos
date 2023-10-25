@@ -1,11 +1,25 @@
 package c2ejercicios;
 
 /*
-a) Escribir un programa en Java que muestre por pantalla un mensaje de Bienvenida a un usuario. Por ejemplo: “Hola,
-    bienvenido al sistema”.
-b) Una vez logrado esta primera parte, permitir que se almacene el nombre del usuario en una variable y se muestre el
-    mismo en el mensaje. Por ejemplo: “Hola Eduardo, bienvenida al sistema”.
+    a) Una recital permite únicamente el ingreso de mayores de 18 años. Para ello necesita un programa que, a partir de
+       que un usuario ingrese su edad, determine mediante un mensaje en pantalla si la persona puede o no ingresar al
+       evento. El programa debe mostrar (según cada caso) un mensaje informando la situación.
 */
 
+import java.util.Scanner;
+
 public class ejercicio1 {
+    public static void main(String[] args) {
+        String msA = "Puede ingresar", msN = "No se permite la entrada a menores de 18 años";
+        int edad = 0;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.printf("Introduce tu edad: ");
+        edad = sc.nextInt();
+
+        if (edad >= 18)
+            System.out.println(msA);
+        else
+            System.out.println(msN);
+    }
 }

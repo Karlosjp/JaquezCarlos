@@ -1,10 +1,29 @@
 package c2ejercicios;
+
+import java.util.Scanner;
+
 /*
-a) Crea un programa que declare una variable para cada uno de los siguientes tipos de datos: int, double, boolean y
-    String. Asigna un valor a cada variable y muestra su contenido en la consola.
-b) Ahora, asigna valores que no correspondan al tipo de dato. Por ejemplo, un int en un String o un String en un double…
-    ¿Qué sucede con el programa? ¿Se produce algún error? ¿En qué situaciones se genera error y en cuáles no? Justificar
-    el por qué de cada caso. Debatir con otros compañeros.
+    a) Imagina que eres un cajero en un supermercado. Crea un programa en Java que permita ingresar el precio de varios
+       productos comprados por un cliente.
+    - Utiliza una estructura repetitiva (la que quieras) para continuar pidiendo precios hasta que el usuario decida
+      finalizar. Luego, muestra el total de la compra que debe abonar.
 */
 public class ejercicio2 {
+    public static void main(String[] args) {
+        double dato = 1;
+        double total = 0;
+        Scanner sc = new Scanner(System.in);
+
+        while (dato != 0) {
+            System.out.println("---- Introduce 0 para terminar ----");
+
+            System.out.printf("Introduce el precio: ");
+            dato = sc.nextDouble();
+
+            if (dato != 0)
+                total += dato;
+        }
+
+        System.out.println("El total  a pagar es: " + total);
+    }
 }
