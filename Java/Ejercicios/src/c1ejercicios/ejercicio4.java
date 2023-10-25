@@ -1,5 +1,6 @@
 package c1ejercicios;
 
+import java.io.PrintStream;
 import java.util.Scanner;
 
 /*
@@ -12,10 +13,10 @@ public class ejercicio4 {
         int num1, num2;
         Scanner sc = new Scanner(System.in);
 
-        System.out.printf("Escribe el 1º numero: ");
+        System.out.print("Escribe el 1º numero: ");
         num1 = sc.nextInt();
 
-        System.out.printf("Escribe el 2º numero: ");
+        System.out.printf("Escribe el 2º numero: ")
         num2 = sc.nextInt();
 
         System.out.println("La suma es: " + num1 + " + " + num2 + " = " + (num1 + num2));

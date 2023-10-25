@@ -1,5 +1,6 @@
 package c2ejercicios;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -21,12 +22,12 @@ import java.util.Scanner;
  */
 public class ejercicio4 {
     public static void main(String[] args) {
-        String msgFila = "Introduce la fila seleciconada: ";
-        String msgAsiento = "Introduce el asiento seleciconado: ";
+        String msgFila = "Introduce la fila: ";
+        String msgAsiento = "Introduce el asiento: ";
         String msgOcupado = "El asiento seleccionado esta ocupado";
-        String msgDisponible = "Se ha realizado con exito la reserva del asiento seleccionado";
-        String text1 = "", text2;
-        String teatro[][] = new String[5][5];
+        String msgDisponible = "Se ha realizado la reserva del asiento seleccionado";
+        String text1, text2;
+        String[][] teatro = new String[5][5];
         int f, a;
 
         InicializarMatriz(teatro);
@@ -61,13 +62,12 @@ public class ejercicio4 {
     }
 
     public static void InicializarMatriz(String[][] teatro) {
-        for (int x = 0; x < teatro.length; x++)
-            for (int y = 0; y < teatro[x].length; y++)
-                teatro[x][y] = "O";
+        for (String[] f : teatro)
+            Arrays.fill(f, "O");
     }
 
     public static void MostrarMatriz(String[][] teatro) {
-        System.out.printf("N-");
+        System.out.print("N-");
         for (int x = 1; x < teatro[0].length + 1; x++)
             System.out.printf("" + x);
 
@@ -84,7 +84,7 @@ public class ejercicio4 {
         }
 
         for (int x = 0; x < teatro[0].length + 3; x++)
-            System.out.printf("-");
+            System.out.print("-");
 
         System.out.println();
     }
@@ -102,8 +102,7 @@ public class ejercicio4 {
         Scanner sc = new Scanner(System.in);
 
         System.out.printf(msg);
-        String aux = sc.next();
 
-        return aux;
+        return sc.next();
     }
 }

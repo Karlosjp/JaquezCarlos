@@ -11,7 +11,8 @@ import java.util.Scanner;
  */
 public class ejercicio3 {
     public static void main(String[] args) {
-        double temps[] = new double[7], tempMedia = 0;
+        double[] temps = new double[7];
+        double tempMedia = 0;
         Scanner sc = new Scanner(System.in);
 
         for (int x = 0; x < temps.length; x++) {
@@ -22,7 +23,7 @@ public class ejercicio3 {
         for (double temp : temps)
             tempMedia += temp;
 
-        System.out.printf("La temperatura media es de la semana es: ");
+        System.out.print("La temperatura media es de la semana es: ");
         System.out.println(String.format("%.2f", (tempMedia / temps.length)) + "º");
 
     }

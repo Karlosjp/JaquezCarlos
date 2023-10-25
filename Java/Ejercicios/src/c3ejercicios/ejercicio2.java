@@ -35,7 +35,7 @@ public class ejercicio2 {
     }
 
     public static void CambiarNombre(String nName, Persona p) {
-        // Mostrar por pantalla el antes, realizar el cambio y luego mostrar el después de los datos de las dos personas
+        // Mostrar por pantalla él antes, realizar el cambio y luego mostrar él después de los datos de las dos personas
         // cuyos nombres fueron cambiados
         System.out.println(p);
         p.setNombre(nName);

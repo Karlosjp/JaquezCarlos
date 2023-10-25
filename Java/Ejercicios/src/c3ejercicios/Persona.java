@@ -2,7 +2,6 @@ package c3ejercicios;
 
 public class Persona {
     private static int totalId = 0;
-    private int id;
     private int edad;
     private String nombre;
     private String direccion;
@@ -21,7 +20,7 @@ public class Persona {
     }
 
     public Persona(int edad, String nombre, String direccion, String telefono) {
-        this.id = totalId++;
+        int id = totalId++;
         this.edad = edad;
         this.nombre = nombre;
         this.direccion = direccion;

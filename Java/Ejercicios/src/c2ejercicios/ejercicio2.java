@@ -17,7 +17,7 @@ public class ejercicio2 {
         while (dato != 0) {
             System.out.println("---- Introduce 0 para terminar ----");
 
-            System.out.printf("Introduce el precio: ");
+            System.out.print("Introduce el precio: ");
             dato = sc.nextDouble();
 
             if (dato != 0)
