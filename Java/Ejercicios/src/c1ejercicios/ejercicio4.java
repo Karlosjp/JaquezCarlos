@@ -16,7 +16,7 @@ public class ejercicio4 {
         System.out.print("Escribe el 1º numero: ");
         num1 = sc.nextInt();
 
-        System.out.printf("Escribe el 2º numero: ")
+        System.out.printf("Escribe el 2º numero: ");
         num2 = sc.nextInt();
 
         System.out.println("La suma es: " + num1 + " + " + num2 + " = " + (num1 + num2));
