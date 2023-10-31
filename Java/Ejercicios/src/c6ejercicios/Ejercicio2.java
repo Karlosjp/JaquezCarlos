@@ -28,40 +28,38 @@ public class Ejercicio2 {
         productos.add(new Producto(1, 50.0, 299.99, "Galaxy tap 50", "Samsumg", "Tablet"));
         productos.add(new Producto(1, 15.5, 119.99, "Cargador basico 30w", "Manzanita", "Cargador"));
 
-        if (!productos.isEmpty()) {
-            // c) Recorrer el ArrayList y determinar el producto con el mayor precio de venta.
-            Producto precioMayor = productos.get(0);
-            for (Producto p : productos)
-                if (p.getPrecioVenta() > precioMayor.getPrecioVenta())
-                    precioMayor = p;
+        // c) Recorrer el ArrayList y determinar el producto con el mayor precio de venta.
+        Producto precioMayor = productos.get(0);
+        for (Producto p : productos)
+            if (p.getPrecioVenta() > precioMayor.getPrecioVenta())
+                precioMayor = p;
 
-            System.out.println("El producto con mayor precio de venta es: " + precioMayor);
+        System.out.println("El producto con mayor precio de venta es: " + precioMayor);
 
-            // d) Recorrer el ArrayList y determinar el producto con el menor precio de costo.
-            Producto costoMenor = productos.get(0);
-            for (Producto p : productos)
-                if (p.getPrecioCosto() < costoMenor.getPrecioCosto())
-                    costoMenor = p;
+        // d) Recorrer el ArrayList y determinar el producto con el menor precio de costo.
+        Producto costoMenor = productos.get(0);
+        for (Producto p : productos)
+            if (p.getPrecioCosto() < costoMenor.getPrecioCosto())
+                costoMenor = p;
 
-            System.out.println("El producto con menor precio costo es: " + costoMenor);
+        System.out.println("El producto con menor precio costo es: " + costoMenor);
 
-            // e) Borrar el producto que se encuentre en la posición 5 del ArrayList.
-            productos.remove(5);
+        // e) Borrar el producto que se encuentre en la posición 5 del ArrayList.
+        productos.remove(5);
 
-            // f) Determinar el producto que tenga la mayor cantidad en stock.
-            Producto stockMayor = productos.get(0);
-            for (Producto p : productos)
-                if (p.getStock() > stockMayor.getStock())
-                    stockMayor = p;
+        // f) Determinar el producto que tenga la mayor cantidad en stock.
+        Producto stockMayor = productos.get(0);
+        for (Producto p : productos)
+            if (p.getStock() > stockMayor.getStock())
+                stockMayor = p;
 
-            System.out.println("El producto con mayor stock: " + stockMayor);
+        System.out.println("El producto con mayor stock: " + stockMayor);
 
-            // A ese producto, descontarle 3 unidades del stock y actualizar el registro en la lista con base en eso.
-            if (stockMayor.getStock() > 3)
-                productos.get(productos.indexOf(stockMayor)).setStock(stockMayor.getStock() - 3);
+        // A ese producto, descontarle 3 unidades del stock y actualizar el registro en la lista con base en eso.
+        if (stockMayor.getStock() > 3)
+            productos.get(productos.indexOf(stockMayor)).setStock(stockMayor.getStock() - 3);
 
-            for (Producto p : productos)
-                System.out.println(p);
-        }
+        for (Producto p : productos)
+            System.out.println(p);
     }
 }
