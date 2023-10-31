@@ -25,10 +25,7 @@ package c6ejercicios;
         g) Polimorfismo: Recorrer el ArrayList de Vehículos y mostrar la información de cada uno de ellos.
  */
 
-import c6ejercicios.ej1.Auto;
-import c6ejercicios.ej1.Camioneta;
-import c6ejercicios.ej1.Moto;
-import c6ejercicios.ej1.Vehiculo;
+import c6ejercicios.ej1.*;
 
 import java.util.ArrayList;
 
@@ -43,20 +40,11 @@ public class Ejercicio1 {
         for (Vehiculo v : vehiculos) {
             System.out.println(v.CalcularAntiguedad() + " Años de antiguedad");
 
-            if (v instanceof Auto) {
-                System.out.println(v);
-                System.out.println("Despues de cargar: " + ((Auto) v).cargarEnergia(500.0));
-            }
+            if (v instanceof ICombustion)
+                System.out.println("Despues de cargar: " + ((ICombustion) v).recargarCombustible(20.9));
 
-            if (v instanceof Moto) {
-                System.out.println(v);
-                System.out.println("Despues de cargar: " + ((Moto) v).recargarCombustible(25.5));
-            }
-
-            if (v instanceof Camioneta) {
-                System.out.println(v);
-                System.out.println("Despues de cargar: " + ((Camioneta) v).recargarCombustible(20.9));
-            }
+            if (v instanceof IElectrico)
+                System.out.println("Despues de cargar: " + ((IElectrico) v).cargarEnergia(500.0));
         }
     }
 }
