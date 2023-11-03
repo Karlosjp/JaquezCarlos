@@ -1,6 +1,7 @@
 package c6ejercicios.ej1;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
 
@@ -16,19 +17,15 @@ public class Camioneta extends Vehiculo implements ICombustion {
 
     @Override
     public int CalcularAntiguedad() {
-        Date date = new Date();
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate fechaFabricacion = LocalDate.of(anno, 1, 1);
+        LocalDate fechaActual = LocalDate.now();
 
-        int i = localDate.getYear() - this.anno;
-
-        return i;
+        return Period.between(fechaFabricacion, fechaActual).getYears();
     }
 
     @Override
-    public String recargarCombustible(Double carga) {
-        this.capacidadTanque += carga;
-
-        return "La carga de combustible actual es: " + this.capacidadTanque;
+    public String recargarCombustible() {
+        return "Recargando combustible";
     }
 
     @Override

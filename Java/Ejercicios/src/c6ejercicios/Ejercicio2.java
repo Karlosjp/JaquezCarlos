@@ -45,7 +45,7 @@ public class Ejercicio2 {
         System.out.println("El producto con menor precio costo es: " + costoMenor);
 
         // e) Borrar el producto que se encuentre en la posición 5 del ArrayList.
-        productos.remove(5);
+        productos.remove(4);
 
         // f) Determinar el producto que tenga la mayor cantidad en stock.
         Producto stockMayor = productos.get(0);

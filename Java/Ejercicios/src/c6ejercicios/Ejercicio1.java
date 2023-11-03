@@ -1,6 +1,12 @@
 package c6ejercicios;
 
 /*
+    Solucion actualizada en Grupo:
+        *- Jose del Palacio casanova
+        *- Francisco Matias Molina Jurado
+        *- Ignacio Bacigalupi
+        *- Carlos Jaquez
+
     Un sistema de gestión de vehículos necesita ser desarrollado para una futura implementación para una tienda de
     venta de autos. Se requiere utilizar para su implementación tanto clases abstractas como interfaces para modelar
     este sistema.
@@ -34,17 +40,17 @@ public class Ejercicio1 {
         ArrayList<Vehiculo> vehiculos = new ArrayList<>();
 
         vehiculos.add(new Auto(2020, 83500.0, "APX 1234", "Patata", "Andante", 3000.0, 50.5));
-        vehiculos.add(new Moto(2000, 500.0, "CBY 1234", "Honda", "Model2s", 500, "Tipo 4", 55.1));
+        vehiculos.add(new Moto(2000, 500.0, "CBY 1234", "Honda", "Model2s", 500, "Tipo 4"));
         vehiculos.add(new Camioneta(2017, 13500.0, "SWG 1234", "Seat", "Trabajo", 35.0, 2.1));
 
         for (Vehiculo v : vehiculos) {
+            System.out.println(v);
             System.out.println(v.CalcularAntiguedad() + " Años de antiguedad");
 
             if (v instanceof ICombustion)
-                System.out.println("Despues de cargar: " + ((ICombustion) v).recargarCombustible(20.9));
+                System.out.println("Despues de cargar: " + ((ICombustion) v).recargarCombustible());
 
-            if (v instanceof IElectrico)
-                System.out.println("Despues de cargar: " + ((IElectrico) v).cargarEnergia(500.0));
+            if (v instanceof IElectrico) System.out.println("Despues de cargar: " + ((IElectrico) v).cargarEnergia());
         }
     }
 }

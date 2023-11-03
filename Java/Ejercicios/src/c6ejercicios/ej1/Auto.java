@@ -1,8 +1,7 @@
 package c6ejercicios.ej1;
 
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
+import java.time.Period;
 
 public class Auto extends Vehiculo implements IElectrico {
     private Double capacidadBateriaMah;
@@ -15,20 +14,16 @@ public class Auto extends Vehiculo implements IElectrico {
     }
 
     @Override
-    public String cargarEnergia(Double carga) {
-        this.capacidadBateriaMah += carga;
-
-        return "La energia actual es: " + this.capacidadBateriaMah;
+    public String cargarEnergia() {
+        return "Recargando energia";
     }
 
     @Override
     public int CalcularAntiguedad() {
-        Date date = new Date();
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate fechaFabricacion = LocalDate.of(anno, 1, 1);
+        LocalDate fechaActual = LocalDate.now();
 
-        int i = localDate.getYear() - this.anno;
-
-        return i;
+        return Period.between(fechaFabricacion, fechaActual).getYears();
     }
 
     @Override
