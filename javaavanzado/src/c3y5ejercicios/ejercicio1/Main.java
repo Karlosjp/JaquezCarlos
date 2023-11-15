@@ -1,4 +1,4 @@
-package c5ejercicios.ejercicio1;
+package c3y5ejercicios.ejercicio1;
 
 /*
     Crea una aplicación que maneje información sobre empleados. Cada empleado tiene un nombre, un salario y una

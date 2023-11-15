@@ -1,4 +1,4 @@
-package c5ejercicios.ejercicio1;
+package c3y5ejercicios.ejercicio1;
 
 public class Empleado {
     private String nombre;

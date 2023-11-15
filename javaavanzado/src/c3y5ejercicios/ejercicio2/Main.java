@@ -1,4 +1,4 @@
-package c5ejercicios.ejercicio2;
+package c3y5ejercicios.ejercicio2;
 
 /*
     Imagina que estás construyendo una aplicación para gestionar eventos en una agenda. Cada evento tiene un nombre,
