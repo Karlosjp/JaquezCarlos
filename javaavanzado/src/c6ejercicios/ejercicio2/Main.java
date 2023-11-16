@@ -17,4 +17,12 @@ package c6ejercicios.ejercicio2;
  */
 
 public class Main {
+    public static void main(String[] args) {
+        RegistroMascotas<Ave> registroAve = new RegistroMascotas();
+        RegistroMascotas<Gato> registroGato = new RegistroMascotas();
+        RegistroMascotas<Perro> registroPerro = new RegistroMascotas();
+        RegistroMascotas<Reptil> registroReptil = new RegistroMascotas();
+
+        
+    }
 }
