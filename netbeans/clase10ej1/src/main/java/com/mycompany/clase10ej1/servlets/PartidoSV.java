@@ -4,9 +4,11 @@
  */
 package com.mycompany.clase10ej1.servlets;
 
+import com.mycompany.clase10ej1.logica.Partido;
 import com.mycompany.clase10ej1.persistencia.ControladoraPersistencia;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "PartidoSV", urlPatterns = {"/PartidoSV"})
 public class PartidoSV extends HttpServlet {
 
+    private final String INDEXJSP = "index.jsp";
     ControladoraPersistencia controlPersistencia = new ControladoraPersistencia();
 
     /**
@@ -60,7 +63,12 @@ public class PartidoSV extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        List<Partido> lista = controlPersistencia.listarPartido();
+
+        request.setAttribute("partidos", lista);
+
+        // Redirigir de vuelta al formulario
+        request.getRequestDispatcher(INDEXJSP).forward(request, response);
     }
 
     /**
@@ -74,7 +82,44 @@ public class PartidoSV extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String voto = request.getParameter("opciones");
+        Partido p = new Partido();
+        int votos = 0;
+
+        switch (voto) {
+            case "partidoA":
+                p = controlPersistencia.buscarPartidoById(1);
+                break;
+            case "partidoB":
+                p = controlPersistencia.buscarPartidoById(2);
+                break;
+            case "partidoC":
+                p = controlPersistencia.buscarPartidoById(3);
+                break;
+            default:
+                throw new AssertionError();
+        }
+
+        votos = p.getVotos();
+        p.setVotos(++votos);
+        controlPersistencia.editarPartido(p);
+
+        /*Partido partidoA = new Partido();
+        partidoA.setName("Partido A");
+        partidoA.setVotos(0);
+        controlPersistencia.crearPartido(partidoA);
+
+        Partido partidoB = new Partido();
+        partidoB.setName("Partido B");
+        partidoB.setVotos(0);
+        controlPersistencia.crearPartido(partidoB);
+
+        Partido partidoC = new Partido();
+        partidoC.setName("Partido C");
+        partidoC.setVotos(0);
+        controlPersistencia.crearPartido(partidoC);
+         */
+        response.sendRedirect(INDEXJSP);
     }
 
     /**
